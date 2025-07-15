@@ -1,0 +1,120 @@
+. features
+Path to the .feature files.
+
+features = "src/test/resources/features"
+✅ 2. glue
+Tells Cucumber where to look for step definitions.
+
+glue = "stepdefinitions"
+✅ 3. tags
+Run scenarios with specific tags.
+
+tags = "@Smoke or @Regression"
+Supports:
+@tag
+@tag1 and @tag2
+@tag1 or @tag2
+not @tag
+
+✅ 4. plugin
+Generate reports and output formats.
+
+plugin = {
+    "pretty",                              // Console readable
+    "html:target/cucumber-report.html",    // HTML report
+    "json:target/cucumber-report.json",    // JSON report
+    "junit:target/cucumber-report.xml"     // JUnit XML
+}
+✅ 5. monochrome
+Removes unreadable characters in console output.
+monochrome = true
+✅ 6. dryRun
+
+Checks whether every step has its step definition without executing the test.
+dryRun = true
+Useful when:
+
+You want to check if any step definitions are missing.
+
+✅ 7. publish
+Automatically publishes the report to Cucumber Reports Cloud.
+publish = true
+✅ Example: Your Ideal Runner Configuration
+
+package runner;
+
+import org.junit.runner.RunWith;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+    features = "src/test/resources/features",
+    glue = "stepdefinitions",
+    tags = "@a1 or @login",
+    plugin = {
+        "pretty",
+        "html:target/cucumber-reports/report.html",
+        "json:target/cucumber-reports/report.json",
+        "junit:target/cucumber-reports/report.xml"
+    },
+    monochrome = true,
+    dryRun = false,
+    publish = true
+)
+public class TestRunner {
+}
+
+What I Have Learned:
+
+Cucumber BDD Framework with Selenium (Java):
+
+Built a complete BDD framework from scratch using Maven, Cucumber, Selenium, and JUnit.
+Understood how to define Feature files, Step Definitions, and Runner class.
+
+Tag-Based Scenario Execution:
+
+Learned how to use @tags in feature files to organize and selectively run test scenarios.
+Executed scenarios using Maven command with -Dcucumber.filter.tags=@tagName for targeted testing.
+
+Cucumber Options Usage:
+
+Understood key Cucumber options:
+monochrome = true: for clean readable console output.
+dryRun = false: to ensure all step definitions are implemented.
+publish = true: to generate reports on the Cucumber Reports cloud.
+
+Handling Login Scenarios:
+
+Automated different login scenarios (valid, invalid username, invalid password, empty credentials) for the site:
+https://practicetestautomation.com/practice-test-login/
+
+✅ What I Have Done:
+
+Project Setup:
+
+Created a Maven-based Cucumber-Selenium framework with proper folder structure.
+Added dependencies for Selenium, Cucumber, WebDriverManager, JUnit in pom.xml.
+
+Created Test Cases:
+
+Developed multiple BDD scenarios in .feature files for login functionality using tags like @a1, @smoke, etc.
+Implemented Step Definitions:
+Wrote complete step definitions for each scenario using Selenium WebDriver.
+Used locators, actions like sendKeys, click, and assertions to validate expected outcomes.
+
+Runner Class Configuration:
+
+Configured Cucumber runner with @CucumberOptions including:
+features, glue, tags, plugin, monochrome, and publish.
+
+Tag-Based Execution via Maven:
+
+Executed specific scenarios using Maven command:
+
+mvn test "-Dcucumber.filter.tags=@smoke"
+Also learned how to fix errors like Unknown lifecycle phase by properly quoting the command.
+
+Debugging and Fixing:
+
+Resolved issues related to missing step definitions and tag filtering errors during Maven run.

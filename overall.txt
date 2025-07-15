@@ -1,0 +1,612 @@
+                                            1.Projects
+
+                                       1.1 Experian project:
+
+-"I'm currently working at TCS on a project for Experian, which is a mainframe modernization initiative.
+ The goal is to migrate and validate legacy data pipelines into a cloud-based architecture using Spark and Scala on AWS.
+
+-My primary responsibility is validating the data transformation logic handled through Apache Spark jobs.
+ I work closely with developers and the QA lead to understand business rules mentioned in the user stories.
+ Once I receive a story, I break it down into test scenarios and create Gherkin-based BDD test scripts.
+
+-We're using a custom BDD framework built in Scala and integrated with Apache Spark.
+ I update step definitions and runners based on new logic and business needs. 
+ I fetch input and output data from S3 buckets using SQL queries in AWS Athena. Once I prepare the test data,
+ I load it into our framework and execute the scripts via Maven inside IntelliJ.
+
+-During execution, I validate the correctness of data transformations, check record counts, schema changes,
+ and logic such as filtering or mapping. If the validation passes, I upload the report into JIRA; if not,
+ I raise defects and collaborate with the dev team for fixes.
+
+-I’m fully involved in Agile ceremonies — I update my progress during daily stand-ups, participate in backlog grooming, 
+ and demo results in sprint reviews. I also support regression testing at the end of each sprint and contribute in retrospectives by
+ suggesting improvements like early data access or automation scope expansion."
+
+
+                                       1.2 Selenium with java project
+
+-"I worked on a web-based automation project where we were testing a customer onboarding application for a financial domain client.
+  This application had multiple modules like login, user registration, document upload, and approval workflow.
+  Our goal was to automate the UI test cases using Selenium with Java, following the Cucumber BDD approach.
+
+-My role started right from sprint planning where I reviewed the user stories and identified test scenarios.
+ I wrote manual test cases first and then converted those into Gherkin scenarios in feature files. For automation,
+ I followed the Page Object Model design pattern, which helped in maintaining reusable and readable code.
+
+-I implemented step definitions in Java using Selenium WebDriver APIs and organized the test layers into Page classes,
+ step definition classes, and utilities. We used Maven as a build tool and executed the test suite either locally or through Jenkins
+ as part of our CI/CD pipeline.
+
+-The tests were executed on multiple browsers like Chrome and Firefox by leveraging WebDriverManager and parameterization via
+ Cucumber hooks or TestNG. I used data-driven testing by integrating Excel/CSV/JSON as external data sources.
+
+-For reporting, we generated Extent Reports to show execution results with screenshots for pass/fail scenarios.
+ I raised bugs in JIRA with proper logs and evidence. I also performed regression testing at the end of every sprint and ensured
+ all critical flows were automated and stable.
+
+-I was fully involved in Agile ceremonies like daily stand-ups, sprint reviews (where we demoed our automation progress),
+ and retrospectives, where I contributed ideas like identifying reusable components or prioritizing
+ smoke suite execution post-deployment."
+
+
+                                1.3 API Testing for E-Commerce using Postman
+
+"I worked on an E-Commerce application where the backend was developed using RESTful APIs to handle modules like user authentication,
+ product catalog, cart, checkout, order processing, and payment integration.
+ My responsibility was to ensure all these APIs functioned correctly, securely, and met the business requirements.
+
+-I used Postman to test the APIs by creating structured collections grouped by modules—such as Auth, 
+ Products, Cart, Orders, and Payments. I executed different types of requests including GET, POST, PUT,
+ DELETE to validate the full order lifecycle.
+
+-For each API, I validated response status codes, headers, and JSON response body.
+ I also checked error handling by passing invalid inputs and validated status codes like 400, 401, 403, and 500.
+
+-Postman scripting was used to write test assertions (using JavaScript) to validate specific response fields, data types,
+ and values. For example, in the product API, I validated that prices and stock values are non-negative, and for checkout,
+ I verified that discount logic and tax calculations are accurate.
+
+-I used Postman environment variables for dynamic data like auth tokens and product IDs, 
+ and passed values between requests using pre-request and test scripts. This helped automate chained flows such as 
+ login → add to cart → place order.
+
+-I also automated collection runs using the Postman Collection Runner and executed them via Newman CLI through Jenkins
+ in our CI/CD pipeline. We integrated API tests to run nightly and post-deployment in QA environments.
+
+-Defects found during API testing were logged in JIRA with detailed request/response payloads, logs, and screenshots. 
+ I worked closely with developers during API debugging and actively participated in Agile ceremonies like daily standups,
+ sprint planning, and sprint reviews."
+
+___________________________________________________________________________________________________________________________________
+
+
+                                                  Day-to-Day Activities
+
+1. Morning Stand-Up (Agile Daily Scrum)
+
+Join the daily stand-up meeting
+
+Provide updates on:
+
+What I have completed yesterday (e.g., test cases, automation scripts)
+What I hav plan to do today (e.g., data setup, defect retesting)
+Any blockers (e.g., access issues, pending development tasks)
+
+2. Pick Up New User Stories or Subtasks
+
+Go through JIRA board
+Pick assigned stories for the sprint
+Review user story and acceptance criteria
+If needed, sync with BA or Developer to clarify business logic
+
+3. Test Case Design / Scenario Planning
+
+Write test scenarios in manual format or Excel
+Convert them to BDD Gherkin feature files
+
+For data validation tasks:
+
+Identify test data needed from AWS S3
+Write SQL queries in Athena to extract input/output
+
+4. Automation Script Development
+
+For UI testing (Selenium + Java + Cucumber):
+Write/modify step definitions
+Use Page Object Model (POM)
+Parameterize using Scenario Outline or DataTable
+For Big Data testing (Spark + Scala + Cucumber):
+Update step definitions for transformation logic
+Trigger Spark jobs locally using IntelliJ
+Compare input vs output based on business rules
+
+5. Test Execution
+
+Execute tests using:
+
+Maven from IntelliJ or terminal
+Collection Runner (for API testing in Postman)
+
+Validate:
+
+Web UI behavior (elements, actions, assertions)
+Data correctness from Spark job (record counts, schema, logic)
+Use logs, screenshots, and Cucumber reports for analysis
+
+6. Defect Management
+
+If a test fails:
+
+Investigate root cause
+Raise defect in JIRA with steps, logs, and screenshots
+Retest defects after fix and update status accordingly
+
+7. Continuous Integration (CI) Activities
+
+Push code to Bitbucket/Git
+Monitor Jenkins build execution
+Check reports/logs and ensure successful run
+Trigger regression/smoke suites when needed
+
+8. Regression Testing (End of Sprint)
+
+Execute full or partial regression suite
+Validate major functionalities and data pipelines are stable
+Ensure new changes didn’t break existing flow
+
+9. Collaboration and Knowledge Sharing
+
+Attend Developer sync-up meetings for story clarifications
+Help team members with framework or test issues
+Share reusable functions or libraries
+
+10. Documentation and Reporting
+Update:
+
+Test execution status in JIRA
+KT docs, test plan, test data, defect logs
+Sprint demo reports or screenshots for review meetings
+
+Daily Summary
+
+ My typical day starts with a stand-up call where I update my progress and blockers.
+ Then I pick up user stories, review the logic, and design BDD scenarios.
+ I work on test automation either using Selenium for UI or Spark-Scala for data pipelines.
+ I validate test data using Athena queries and execute the scripts using Maven.
+ I raise defects in JIRA if needed and push my changes to Bitbucket.
+ At the end of the sprint, I help with regression and attend sprint reviews to demo my test coverage.
+
+
+_________________________________________________________________________________________________________________________________________
+                                                       
+                                                       Agile 
+
+Agile Participation
+	
+- Participated in daily standups to provide updates on user stories and subtasks.
+- After receiving the user story from the lead, broke it down into test cases.
+- Uploaded test scenarios into JIRA for traceability.
+
+Test Scenario Design	
+
+- Attended developer sync calls to understand the required logic and transformations.
+- Created Gherkin-based test scripts aligned to the business rules in the user story.
+
+Framework Involvement	
+
+- Worked on Cucumber BDD framework setup using Scala + Spark.
+- Updated step definitions, runners, and hooks to match new test cases.
+- Maintained reusable logic as per modular framework design.
+
+Data Preparation & Validation
+
+- Queried AWS Athena to extract input and output datasets from S3 buckets.
+- Used SQL queries to fetch and filter test data for different validation points.
+- Validated the business rules by comparing transformed output with expected logic.
+
+Test Execution	
+
+- Uploaded input/output test files into the framework.
+- Used Maven to trigger execution directly from IntelliJ IDE.
+- Validated data transformation correctness and edge-case handling.
+
+Defect Lifecycle	
+
+- If validation failed, raised bugs in JIRA and coordinated with developers for resolution.
+- Upon fix, re-executed and verified data corrections.
+- Uploaded pass/fail Cucumber reports in JIRA.
+
+Regression Testing	
+
+- At the end of each sprint, executed regression testing on all previous scenarios.
+- Ensured no breakage after new code deployments or business logic changes.
+
+______________________________________________________________________________________________________________________________-
+
+                                          Agile Ceremonies & my Involvement
+
+1. Sprint Planning
+
+Purpose: Define what can be delivered in the upcoming sprint and how the work will be achieved.
+
+My Involvement:
+
+Reviewed the user stories assigned for the sprint.
+Broke down stories into test scenarios and subtasks in JIRA.
+Estimated testing effort and identified test data dependencies.
+Clarified any logic-related doubts with BA or dev team before the sprint started.
+
+2. Daily Stand-Up (Scrum)
+
+Purpose: Share daily progress, blockers, and plans.
+
+My Involvement:
+
+"Yesterday I completed test case design for Story-123."
+"Today I will start automation scripting and data validation."
+"I’m blocked due to Athena latency / missing S3 access."
+Actively collaborated with developers to clarify issues immediately.
+
+3. Dev Sync or Backlog Grooming (Optional but Common)
+
+Purpose: Clarify upcoming stories, edge cases, and technical expectations.
+
+my Involvement:
+
+Participated in sync calls with developers to:
+Understand the data transformation logic.
+Discuss edge-case handling and business rules.
+Finalize the BDD test scenarios based on logic.
+
+4. Sprint Review (Demo)
+
+Purpose: Demo completed work to stakeholders.
+
+My Involvement:
+
+Presented Cucumber reports for test executions.
+
+Explained:
+
+What was tested.
+What passed/failed.
+Any bugs raised and their status.
+Demonstrated automation coverage and value delivered.
+
+5. Sprint Retrospective
+
+Purpose: Reflect on what went well and what can be improved.
+
+Your Involvement:
+
+Gave feedback such as:
+
+Data delays impacted test execution.
+Suggested early access to data.
+Proposed adding more automation coverage in regression.
+Appreciated good coordination or quick bug fixes.
+
+🔁 Summary of Agile:
+
+“In my project, I actively participate in all Agile ceremonies. 
+During Sprint Planning, I estimate testing effort and define test scope.
+In daily stand-ups, I update my status and raise any blockers like data issues.
+I join developer sync calls to finalize the logic and test scenarios. 
+In Sprint Reviews, I showcase execution results and explain the defects.
+I also contribute to Retrospectives by suggesting improvements such as early test data provisioning or expanding the regression suite. 
+
+
+________________________________________________________________________________________________________________________________                                             
+
+                                                   spark and scala learing
+
+
+1. Scala Basics + Maven Setup
+
+Learned basic Scala syntax: val, var, functions, control structures
+Understood how to create a local Maven-based Scala project
+Learned to manage Maven dependencies and project structure
+Understood how Scala applications run and compile
+
+🔹 2. Apache Spark Integration
+
+Added Spark dependencies to your Scala Maven project
+Understood Spark Architecture: Driver, Executors, Cluster Manager
+Learned about parallel processing and distributed computation
+Understood how Spark works on Big Data
+
+🔹 3. Spark Transformations & Spark SQL
+
+Practiced wide and narrow transformations using RDDs and DataFrames
+E.g., map, filter, groupBy, join, etc.
+Used Spark SQL to query structured data (DataFrames)
+Created small hands-on exercises to validate transformation logic
+Understood how to handle data pipelines in Spark
+
+🔹 4. Agile & JIRA
+
+Learned how to use JIRA to track user stories, bugs, and tasks
+Managed tasks/subtasks under Agile boards
+Understood how to work in Agile using sprint boards and updates
+
+🔹 5. BDD Integration (Cucumber + Scala + Spark)
+
+Integrated Cucumber BDD framework with Spark + Scala project
+Wrote feature files using Gherkin syntax
+Created step definitions in Scala to map Spark logic
+Learned how BDD fits into data testing projects
+
+🔹 6. Jenkins & CI Integration
+
+Understood how to execute the project using Jenkins
+Set up Jenkins pipelines to run Spark-Scala tests
+Enabled automated test execution based on feature file triggers
+
+
+_______________________________________________________________________________________________________________________________________
+
+                                                        cucumber 
+
+
+1. features
+Path to the .feature files.
+
+features = "src/test/resources/features"
+
+2. glue
+
+Tells Cucumber where to look for step definitions.
+
+glue = "stepdefinitions"
+
+3. tags
+
+Run scenarios with specific tags.
+
+tags = "@Smoke or @Regression"
+Supports:
+@tag
+@tag1 and @tag2
+@tag1 or @tag2
+not @tag
+
+4. plugin
+
+Generate reports and output formats.
+
+plugin = {
+    "pretty",                              // Console readable
+    "html:target/cucumber-report.html",    // HTML report
+    "json:target/cucumber-report.json",    // JSON report
+    "junit:target/cucumber-report.xml"     // JUnit XML
+}
+
+5. monochrome
+
+Removes unreadable characters in console output.
+monochrome = true
+
+6. dryRun
+
+Checks whether every step has its step definition without executing the test.
+dryRun = true
+Useful when:
+
+You want to check if any step definitions are missing.
+
+7. publish
+
+Automatically publishes the report to Cucumber Reports Cloud.
+publish = true
+
+Example: Your Ideal Runner Configuration
+
+package runner;
+
+import org.junit.runner.RunWith;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+    features = "src/test/resources/features",
+    glue = "stepdefinitions",
+    tags = "@a1 or @login",
+    plugin = {
+        "pretty",
+        "html:target/cucumber-reports/report.html",
+        "json:target/cucumber-reports/report.json",
+        "junit:target/cucumber-reports/report.xml"
+    },
+    monochrome = true,
+    dryRun = false,
+    publish = true
+)
+public class TestRunner {
+}
+
+_________________________________________________________________________________________________________________________
+                                            
+
+                                            API Testing
+
+
+1. Understanding REST APIs
+
+Learned the structure of RESTful APIs: Endpoints, Methods (GET, POST, PUT, DELETE), Headers, Parameters, and Body.
+Understood HTTP Status Codes (200, 201, 400, 401, 403, 404, 500).
+Understood concepts like CRUD operations, JSON/XML responses, and authentication (Bearer tokens, API keys).
+
+2. Sending Requests in Postman
+
+Sent various types of requests:
+
+GET – to fetch data (e.g., products, users).
+POST – to create resources (e.g., add to cart).
+PUT/PATCH – to update resources (e.g., update profile).
+DELETE – to remove resources (e.g., remove item from cart).
+Added Headers like Content-Type: application/json.
+Passed query params, path variables, and request body.
+
+3. Validating Responses
+
+Learned to check:
+
+Status Code – to verify correct HTTP responses.
+Response Body – used JSON format validation.
+Response Time – checked API performance.
+Verified key fields (e.g., "userId": 101, "price": > 0).
+
+4. Writing Tests in Postman (JavaScript Assertions)
+
+Used the Tests tab in Postman to write JavaScript-based assertions:
+
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Price is greater than 0", function () {
+    let jsonData = pm.response.json();
+    pm.expect(jsonData.price).to.be.above(0);
+});
+
+Validated:
+
+Specific fields in response body
+Data types (e.g., array, string, number)
+
+Schema checks
+
+5. Environment & Global Variables
+
+Used Environment variables to store:
+
+Auth token
+Base URL
+User IDs / product IDs
+Used {{variable}} in requests for dynamic data
+Created multiple environments like DEV, QA, UAT
+
+6. Pre-request Scripts & Dynamic Chaining
+
+Used Pre-request Scripts to:
+Generate timestamps or UUIDs
+Fetch tokens before API calls
+
+Chained requests by storing values from one response and passing to the next:
+
+let jsonData = pm.response.json();
+pm.environment.set("orderId", jsonData.orderId);
+
+7. Postman Collection & Folder Organization
+
+Created Collections to group APIs by modules
+ (Auth, Product, Cart, Orders).
+
+Created folders for:
+
+Smoke test APIs
+Regression API flows
+
+8. Collection Runner & Data-Driven Testing
+
+Ran APIs in bulk using Collection Runner.
+Imported CSV/JSON data for parameterized testing (e.g., test login API with 5 sets of credentials).
+
+9. Automation with Newman CLI
+
+Exported collection and environment JSON.
+Ran collections from the command line using Newman:
+
+newman run mycollection.json -e myenv.json
+Integrated with Jenkins to trigger API tests in CI/CD pipelines.
+
+10. Reporting & Defect Logging
+
+Analyzed test results from Newman (console + HTML reports).
+
+Logged defects in JIRA with:
+
+API request/response
+Status codes
+Screenshot/log evidence
+Discussed defects with developers for faster resolution.
+
+API Summary Line:
+
+ I used Postman to test APIs across various modules in an E-Commerce project.
+ I validated responses, wrote assertions using JavaScript, chained API calls dynamically using environment variables,
+ and automated collection runs with Newman integrated into Jenkins.
+ I also performed data-driven testing and logged detailed defects in JIRA with proper evidence.
+
+
+_________________________________________________________________________________________________________________________________-
+
+                                           Testing concepts:
+
+ “In my project, after every new build, we perform smoke testing to ensure the application is stable.
+ Then we continue with functional testing to verify modules like login, user dashboard, and search.
+ If any fixes are deployed, we perform sanity testing for those specific changes.
+ And before every release, we run a regression suite (automated via Selenium + Cucumber) to ensure no existing functionality is broken.”
+
+1. Functional Testing
+
+Purpose: To verify what the system does (i.e., its functionality) matches the requirements.
+When: Performed after integration testing and during system testing phase.
+Performed by: QA team
+Based on: Business Requirements Document (BRD), SRS, or user stories.
+
+Examples:
+
+Verifying login with valid/invalid credentials
+Checking form submission
+
+Tools: Selenium, Cucumber, Postman (for API)
+
+2. Smoke Testing
+
+Purpose: To quickly check basic and critical functionalities after a new build is deployed.
+When: Immediately after a build release (before any deep testing)
+Performed by: QA
+Also called: Build Verification Testing (BVT)
+
+Examples:
+
+Check if the application launches
+Check if the login button is clickable
+Why: Saves time by ensuring major blockers don't exist before further testing.
+
+3. Sanity Testing
+
+Purpose: To verify specific functionality works after changes like bug fixes or minor updates.
+When: After receiving a new build with changes or patches
+Performed by: QA
+Narrow and deep testing (vs. smoke which is shallow and wide)
+
+Examples:
+
+Only test login page after fixing a login bug
+Only test one module after a small enhancement
+
+4. Regression Testing
+
+Purpose: To ensure new changes or bug fixes have not affected existing functionality.
+When: After each new release or modification
+Performed by: QA (automated or manual)
+Requires: A good test suite or automation framework
+
+Examples:
+
+After updating the login logic, retest user dashboard, logout, and navigation.
+Tools: Selenium, Cucumber, TestNG, JUnit
+
+Have you worked in a Waterfall or Agile/BDD setup?
+
+Answer:
+
+“I’ve worked in a BDD framework using Agile methodology.
+ We write feature files in Gherkin, collaborate with developers and product owners,
+ and automate tests using Selenium with Java and Cucumber.
+ This gives us faster feedback and better understanding of system behavior 
+compared to the traditional waterfall approach where testing starts only after development is completed.”

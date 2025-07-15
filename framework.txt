@@ -1,0 +1,170 @@
+Reverse string and palindrome;
+________________________________________
+class Main {
+    public static void main(String[] args) {
+        String s = "madam";  // change this to test different strings
+        String rev = "";
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            rev = c + rev;
+        }
+
+        System.out.println("Reversed String: " + rev);
+
+        if (s.equals(rev)) {
+            System.out.println("The string is a palindrome.");
+        } else {
+            System.out.println("The string is not a palindrome.");
+        }
+    }
+}
+_____________________________________________________________________
+Code to Remove Duplicates from a String:
+
+class Main {
+    public static void main(String[] args) {
+        String s = "programming";
+        String result = "";
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (result.indexOf(c) == -1) {  // if character not already in result
+                result += c;
+            }
+        }
+
+        System.out.println("Original String: " + s);
+        System.out.println("After removing duplicates: " + result);
+    }
+}
+____________________________________________________________________________________
+fibanic serious
+
+class Main {
+    public static void main(String[] args) {
+        int n=10;
+        int firstnum = 0;
+        int secondnum = 1;
+        int nextnum;
+        for (int i = 1; i <= n; i++){
+            System.out.print(firstnum +",");
+            nextnum = firstnum  + secondnum;
+            firstnum=secondnum;
+            secondnum=nextnum;
+            
+        }
+        
+    }
+}
+
+____________________________________________________________________________
+factorial
+
+class Main {
+    public static void main(String[] args) {
+        int n = 5;  // Change this value to test other numbers
+        int fact = 1;
+
+        for (int i = 1; i <= n; i++) {
+            fact *= i;
+        }
+
+        System.out.println("Factorial of " + n + " is: " + fact);
+    }
+}
+_________________________________________________________________________
+
+project-root/
+│
+├── src/
+│   ├── main/
+│   │   └── java/
+│   │       ├── base/                     # Base class for WebDriver setup/teardown
+│   │       │   └── TestBase.java
+│   │       ├── pages/                    # Page Object Model classes
+│   │       │   └── LoginPage.java
+│   │       ├── utilities/                # Utility classes (waits, config reader, Excel, etc.)
+│   │       │   ├── ConfigReader.java
+│   │       │   ├── ExcelUtil.java
+│   │       │   └── WaitHelper.java
+│   │       └── factory/                  # DriverFactory for parallel execution
+│   │           └── DriverFactory.java
+│
+│   └── test/
+│       ├── java/
+│       │   ├── stepdefinitions/          # Cucumber step definitions
+│       │   │   └── LoginSteps.java
+│       │   ├── runners/                  # Test runner classes
+│       │   │   └── TestRunner.java
+│       │   └── hooks/                    # Hooks for setup/teardown (before/after scenario)
+│       │       └── Hooks.java
+│       │
+│       └── resources/
+│           ├── features/                 # Gherkin feature files
+│           │   └── login.feature
+│           ├── config/                   # Config files (test data, URLs, etc.)
+│           │   └── config.properties
+│           └── testdata/                 # Optional: Excel or JSON data
+│               └── LoginData.xlsx
+│
+├── pom.xml                               # Maven dependency and plugin config
+├── testng.xml (optional)                 # For parallel execution, if TestNG is used
+├── README.md                             # Project documentation
+├── logs/                                 # Log files (if using Log4j/SLF4J)
+└── target/                               # Compiled files and reports (generated)
+
+“In our real-time project, we followed the Page Object Model and structured our BDD framework using Maven.
+ Feature files are stored under src/test/resources/features, step definitions and runners are in src/test/java.
+ We use a base class for WebDriver setup, and a DriverFactory class to support parallel execution.
+ Hooks manage setup/teardown at the scenario level. Configurations and test data are externalized for flexibility.
+ Jenkins is integrated for CI/CD, and reports are generated via Cucumber HTML plugins.”
+
+project-root/
+├── src/main/java/
+│   ├── base/                → WebDriver setup
+│   ├── pages/               → Page classes (Page Object Model)
+│   ├── utilities/           → Common utility functions (Excel reader, config reader)
+│   ├── factory/             → DriverFactory or Wait helpers
+├── src/test/java/
+│   ├── stepdefinitions/     → Gherkin step implementation
+│   ├── runners/             → TestRunner to run feature files
+│   ├── hooks/               → Before/After scenario setup
+├── src/test/resources/
+│   ├── features/            → .feature files (written in Gherkin)
+│   ├── config/              → config.properties (URL, browser)
+│   └── testdata/            → Excel files or JSON (LoginData.xlsx)
+├── pom.xml                  → Maven dependencies
+├── testng.xml               → (optional) Parallel execution
+├── README.md                → Project documentation
+├── logs/                    → Log4j output
+└── target/                  → Generated reports, compiled code
+
+_______________________________________________________________________________________
+| **Scenario**                             | **Likely Status Code** |
+| ---------------------------------------- | ---------------------- |
+| Successful GET request                   | 200                    |
+| New user registered using POST           | 201                    |
+| No results returned in GET               | 204                    |
+| Missing/invalid request body             | 400                    |
+| Unauthorized request                     | 401                    |
+| Trying to delete a non-existent resource | 404                    |
+| Server crash or failure                  | 500                    |
+________________________________________________________________________________________
+
+driver.get("https://testautomationpractice.blogspot.com/");
+        WebElement dropdown = driver.findElement(By.id("country"));
+        Select drop = new Select(dropdown);
+        drop.selectByVisibleText("India");
+
+WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+        WebElement element= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
+
+ driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+___________________________________________________________________________________________-
+
+
+
+
+
+
